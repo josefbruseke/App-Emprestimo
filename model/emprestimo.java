@@ -5,28 +5,34 @@ public class Emprestimo {
     private Amigo amigo;
     private Integer codigo;
 
-    public void setLivro(String LivroUsuario) {
-        livro = LivroUsuario;
+    public Emprestimo(String livro, Amigo amigo, Integer codigo) {
+        this.livro = livro;
+        this.amigo = amigo;
+        this.codigo = codigo;
+    }
+
+    public void setLivro(String livro) {
+        this.livro = livro;
     }
 
     public String getLivro(){
-        return livro;
+        return this.livro;
     }
 
-    public void setAmigo(Amigo AmigoUsuario) {
-        amigo = AmigoUsuario;
+    public void setAmigo(Amigo amigo) {
+        this.amigo = amigo;
     }
 
     public Amigo getAmigo() {
-        return amigo;
+        return this.amigo;
     }
 
-    public void setCodigo(Integer CodigoUsuario) {
-        codigo = CodigoUsuario;
+    public void setCodigo(Integer codigo) {
+        this.codigo = codigo;
     }
 
     public Integer getCodigo() {
-        return codigo;
+        return this.codigo;
     }
 
 }
