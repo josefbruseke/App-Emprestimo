@@ -5,16 +5,22 @@ public class Amigo {
     private String telefone;
     private String cpf;
 
-    public void setNome(String nomeUsuario) {
-        nome = nomeUsuario;
+    public Amigo(String nome, String telefone, String cpf) {
+        this.nome = nome;
+        this.telefone = telefone;
+        this.cpf = cpf;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
     public String getNome() {
-        return nome;
+        return this.nome;
     }
 
     public void setTelefone(String telefoneUsuario) {
-        telefone = telefoneUsuario;
+        this.telefone = telefoneUsuario;
     }
 
     public String getTelefone() {
