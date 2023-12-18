@@ -28,7 +28,7 @@ public class Amigo {
     }
 
     public void setCpf(String cpfUsuario) {
-        cpf = cpfUsuario;
+        this.cpf = cpfUsuario;
     }
 
     public String getCpf() {
