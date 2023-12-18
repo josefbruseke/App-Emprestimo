@@ -1,5 +1,7 @@
 package view;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
 
 public class TelaLivro {
@@ -23,16 +25,33 @@ public class TelaLivro {
         return opcao;
     }
 
-    public Object[] pega_dados_livro() {
-        System.out.println("----- DADOS DO LIVRO ------");
-        System.out.print("Título: ");
+    public Map<String, Object> pegaDadosLivro() {
+        System.out.println("-------- DADOS LIVRO ----------");
+        
+        System.out.print("Titulo: ");
         String titulo = this.input.nextLine();
-        System.out.print("\n");
-        System.out.print(" Codigo: ");
+        
+        System.out.print("Codigo: ");
         int codigo = this.input.nextInt();
         this.input.nextLine();
-        Object[] dados = {titulo, codigo};
+        
+        Map<String, Object> dados = new HashMap<>(); 
+        dados.put("titulo", titulo);
+        dados.put("codigo", codigo);
+        
         return dados;
+    }
+
+
+    public int selecionaLivro() {
+        System.out.print("Digite o código do livro que você deseja seleciona: ");
+        int codigo = this.input.nextInt();
+        this.input.nextLine();
+        return codigo;
+    }
+
+    public void mostraMensagem(String msg) {
+        System.out.println(msg);
     }
 
 }
