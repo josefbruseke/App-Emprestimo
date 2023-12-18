@@ -57,7 +57,6 @@ public class ControladorSistema {
 
 
         int opcao = this.telaSistema.telaOpcoes();
-        System.out.println(opcao);
 
         if (listaOpcoes.containsKey(opcao)) {
             listaOpcoes.get(opcao).run();
