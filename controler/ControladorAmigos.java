@@ -29,8 +29,35 @@ public class ControladorAmigos {
     }
 
     public void alterarAmigo() {
+        this.listaAmigos();
+        String cpfAmigo = this.telaAmigo.selecionaAmigo();
+        Amigo amigo = this.pegaAmigoPorCpf(cpfAmigo);
+        if (amigo != null) {
+        HashMap<String, String> dadosAmigo = this.telaAmigo.pegadaDadosAmigo();
+            String novoNome = dadosAmigo.get("nome");
+            String novoTelefone = dadosAmigo.get("telefone");
+            String novoCpf = dadosAmigo.get("cpf");
+            
+            amigo.setNome(novoNome);
+            amigo.setTelefone(novoTelefone);
+            amigo.setCpf(novoCpf);
 
+        } else {
+            this.telaAmigo.mostraMensagem("ATENÇÃO: Amigo não existe!");
+        }
     }
+
+
+
+    public Amigo pegaAmigoPorCpf(String cpfAmigo) {
+        for (Amigo amigo: this.amigos) {
+            if (amigo.getCpf().equals(cpfAmigo)) {
+                return amigo;
+            }
+        }
+        return null;
+    }
+
 
     public void listaAmigos() {
         this.telaAmigo.imprimeCabecalho();
@@ -45,7 +72,17 @@ public class ControladorAmigos {
       }
 
     public void excluirAmigo() {
+        this.listaAmigos();
+        String cpfAmigo = this.telaAmigo.selecionaAmigo();
+        Amigo amigo = this.pegaAmigoPorCpf(cpfAmigo);
 
+        if (amigo != null) {
+            this.amigos.remove(amigo);
+            this.listaAmigos();
+        } else {
+            this.telaAmigo.mostraMensagem("Amigo não existente");
+        }
+        
     }
 
     public void retornar() {
