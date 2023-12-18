@@ -23,23 +23,43 @@ public class TelaEmprestimo {
         return opcao;
     }
 
-    public HashMap<String, Integer> pegaDadosEmprestimo() {
-        HashMap<String, Integer> dados = new HashMap<>();
+    public HashMap<String, Object> pegaDadosEmprestimo() {
+        HashMap<String, Object> dados = new HashMap<>();
 
         System.out.println("-------- DADOS EMPRESTIMO ----------");
-        System.out.println("CPF Amigo: ");
-        int cpfAmigo = this.input.nextInt();
-        this.input.nextLine();
-        System.out.println("Codigo Livro: ");
+        System.out.print("CPF Amigo: ");
+        String cpfAmigo = this.input.nextLine();
+        System.out.print("Codigo Livro: ");
         int codigoLivro = this.input.nextInt();
         this.input.nextLine();
-        dados.put("cpf Amigo", cpfAmigo);
-        dados.put("codigo Livro", codigoLivro);
+        dados.put("cpfAmigo", cpfAmigo);
+        dados.put("codigoLivro", codigoLivro);
         return dados;
 
     }
 
+    public int selecionaEmprestimo() {
+        return 0;
+    }
+
+    public void mostraMensagem(String msg) {
+        System.out.println(msg);
+    }
+
+    public void imprimeCabecalho() {
+        System.out.println("---------------------------------------------------"); 
+        System.out.println("               LISTA DE EMPRESTIMOS                ");
+        System.out.println("---------------------------------------------------");
+        System.out.printf(
+            "%-10s %-40s %-15s %-15s %s\n", 
+            "Codigo", "Titulo do Livro", "Codigo do Livro", "Emprestimo"," CPF"
+            ); 
+    }
+
+    public void imprimeEmprestimo(int codEmp, String titulo, int codLivro, String nome, String cpf) {
+        System.out.printf(
+                        "%-10d %-40s %-15d %-15s %s\n", 
+                        codEmp, titulo, codLivro, nome, cpf);
+      }
     
-
-
 }
