@@ -44,7 +44,7 @@ public class ControladorSistema {
     }
 
     public void encerraSistema(){
-        System.out.println("Sistema foi encerrado!");
+        System.out.println("Sistema foi encerrado com sucesso!");
         System.exit(0);
     }
 
