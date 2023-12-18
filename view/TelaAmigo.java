@@ -52,8 +52,9 @@ public class TelaAmigo {
     }
 
     public void imprimeCabecalho() {
-        System.out.println("LISTA DE AMIGOS");
-        System.out.println("---------------"); 
+        System.out.println("-----------------"); 
+        System.out.println(" LISTA DE AMIGOS ");
+        System.out.println("-----------------"); 
         System.out.printf("%-15s %-15s %s\n", "Nome", "Telefone", "CPF"); 
     }
       
@@ -63,6 +64,13 @@ public class TelaAmigo {
 
     public void mostraMensagem(String msg) {
         System.out.println(msg);
+    }
+
+
+    public String selecionaAmigo() {
+        System.out.print("Digite o CPF do amigo que desejas selecionar: ");
+        String cpf = input.nextLine();
+        return cpf;
     }
 
 }
