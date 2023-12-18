@@ -1,21 +1,21 @@
 package model;
 
 public class Emprestimo {
-    private String livro;
+    private Livro livro;
     private Amigo amigo;
     private Integer codigo;
 
-    public Emprestimo(String livro, Amigo amigo, Integer codigo) {
+    public Emprestimo(Livro livro, Amigo amigo, Integer codigo) {
         this.livro = livro;
         this.amigo = amigo;
         this.codigo = codigo;
     }
 
-    public void setLivro(String livro) {
+    public void setLivro(Livro livro) {
         this.livro = livro;
     }
 
-    public String getLivro(){
+    public Livro getLivro(){
         return this.livro;
     }
 
