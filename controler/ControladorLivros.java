@@ -33,8 +33,8 @@ public class ControladorLivros {
         Map<String, Object> dadosLivro = this.telaLivro.pegaDadosLivro();
         String titulo = (String) dadosLivro.get("titulo"); 
         int codigo = (int) dadosLivro.get("codigo");
-        Livro novo_livro = new Livro(titulo, codigo);
-        this.livros.add(novo_livro);     
+        Livro novoLivro = new Livro(titulo, codigo);
+        this.livros.add(novoLivro);     
     }
 
     public void alterarLivro() {
@@ -44,10 +44,10 @@ public class ControladorLivros {
 
         if (livro != null) {
         Map<String, Object> dadosLivro = this.telaLivro.pegaDadosLivro();
-            int novo_codigo = (int) dadosLivro.get("codigo");
-            String novo_titulo = (String) dadosLivro.get("titulo");
-            livro.setTitulo(novo_titulo);
-            livro.setCodigo(novo_codigo);
+            int NovoCodigo = (int) dadosLivro.get("codigo");
+            String NovoTitulo = (String) dadosLivro.get("titulo");
+            livro.setTitulo(NovoTitulo);
+            livro.setCodigo(NovoCodigo);
         } else {
             this.telaLivro.mostraMensagem("ATENÇÃO: Livro não existe!");
         }
@@ -56,8 +56,7 @@ public class ControladorLivros {
 
     public void listaLivro() {
         System.out.println("Código      Titulo");
-        for (int i = 0; i < this.livros.size(); i++) {
-            Livro livro = this.livros.get(i);
+        for (Livro livro: this.livros) {
             System.out.print(livro.getCodigo());
             System.out.print("           ");
             System.out.println(livro.getTitulo());
